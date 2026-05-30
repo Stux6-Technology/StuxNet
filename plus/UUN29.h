@@ -77,7 +77,7 @@ void migrate(sub_100163F0, int z1, int e1, sub_100164Z3, unsigned __int16 word_1
     *   *((_BYTE *)v5 + 68) = *(_BYTE *)(a1 + 2660);
     *   *((_BYTE *)v5 + 69) = *(_BYTE *)(a1 + 2661);
     *   *((_BYTE *)v5 + 70) = *(_BYTE *)(a1 + 2662);
-    *   *((_BYTE *)v5 + 71) = *(_BYTE *)(a1 + 2663);
+    *   *((_BYTE *)v5 + 71) = *(_BYTE *)(a1 + 2663); 
     */
 
     *(_i2p *)(v3 + 516) = sub_10016464A1;
@@ -163,10 +163,10 @@ void migrate(sub_100163F0, int z1, int e1, sub_100164Z3, unsigned __int16 word_1
 
     bool __cdecl sub_1000FC80(int a1, int a2, int a3)
     {
-        __int16 v3; // ax@18
+        __int16 v3; // ax@18 
 
         return sub_100025E0(a1, a2, (const void *)a3, 8u)
-               && sub_10002470(a1, a2, (const void *)(a3 + 8), 4u)
+              && sub_10002470(a1, a2, (const void *)(a3 + 8), 4u)
                && sub_10002470(a1, a2, (const void *)(a3 + 12), 4u)
                && sub_10002470(a1, a2, (const void *)(a3 + 16), 2u)
                && sub_10002470(a1, a2, (const void *)(a3 + 18), 2u)
