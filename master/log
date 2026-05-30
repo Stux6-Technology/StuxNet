@@ -1,3 +1,6 @@
 
 Unknown library function GetCurrentProcess
-
+Unknown library function VirtualProtect
+Unknown library function GetTickCount
+Unknown library function GetCurrentThreadId
+Unknown library function wsprintfW
