@@ -48,3 +48,4 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
   <b>Stux6 Technology Core Team</b>
 </p>
 
+> Thank's -> Muhammed Abdi-Ibrahim and Michael Jason ;)
