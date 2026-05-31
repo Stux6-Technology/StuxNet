@@ -3,6 +3,8 @@
   <b></b>
 </p>
 
+---
+
 ## StuxNet: Architectural Teardown & Source Code Reconstruction
 
 This repository contains a comprehensive reverse engineering analysis, source code reconstruction, and architectural deconstruction of the historic **Stuxnet** worm. Managed and optimized under the **Stux6 Technology** volunteer core.
