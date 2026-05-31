@@ -47,5 +47,3 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
   <i>"Technical excellence; not from hierarchy, but from the weight of the technical burden we voluntarily undertake."</i><br>
   <b>Stux6 Technology Team</b>
 </p>
-
-> Thank's -> Muhammed Abdi-Ibrahim and Michael Jason ;)
