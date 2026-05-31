@@ -45,12 +45,14 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ### THANKS
 
-1) Jason Web 
-2) Muhammed Abdi-ibrahim
-3) Michael Jason
-4) Hasan Müftüoğlu
-5) Alperen ERKAN
-6) Christian Roggias
+We would like to express our heartfelt thanks for your contributions to our StuxNet project
+
+1) **Jason Web**
+2) **Muhammed Abdi-ibrahim**
+3) **Michael Jason**
+4) **Hasan Müftüoğlu**
+5) _Alperen ERKAN_
+6) **Christian Roggias**
 
 ---
 <p align="center">
