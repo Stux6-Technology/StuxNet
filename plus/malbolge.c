@@ -19,6 +19,8 @@
 /* you to specify a custom memory-model; the best model to choose in  */
 /* this case is /Ashd (near code, huge data), I think.                */
 
+/* Thank's  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
