@@ -55,6 +55,7 @@ We would like to express our heartfelt thanks for your contributions to our Stux
 4) **Hasan Müftüoğlu**
 5) _Alperen ERKAN_
 6) **Christian Roggias**
+7) **Bipin Upadhyay**
 
 ---
 <p align="center">
@@ -71,4 +72,5 @@ We would like to express our heartfelt thanks for your contributions to our Stux
 5) Alperen ERKAN
 6) Christian Roggia
 7) Jason Web
+8) Bipin Upadhyay 
 --!>
