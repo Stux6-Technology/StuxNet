@@ -42,6 +42,17 @@ The reconstruction focuses on decoding the exact subroutines that defined Stuxne
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
+
+### THANKS
+
+1) Jason Web 
+2) Muhammed Abdi-ibrahim
+3) Michael Jason
+4) Hasan Müftüoğlu
+5) Alperen ERKAN
+6) Christian Roggias
+
+---
 <p align="center">
   <i>"Technical excellence; not from hierarchy, but from the weight of the technical burden we voluntarily undertake."</i><br>
   <b>Stux6 Technology Team</b>
@@ -55,5 +66,5 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 4) Hasan Müftüoğlu
 5) Alperen ERKAN
 6) Christian Roggia
-
+7) Jason Web
 --!>
