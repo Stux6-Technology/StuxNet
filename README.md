@@ -52,5 +52,8 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 1) Urban Müller
 2) Muhammed Abdi-ibrahim
 3) Michael Jason
+4) Hasan Müftüoğlu
+5) Alperen ERKAN
+6) Christian Roggia
 
 --!>
