@@ -3,7 +3,6 @@
   <b></b>
 </p>
 
-
 ## StuxNet: Architectural Teardown & Source Code Reconstruction
 
 This repository contains a comprehensive reverse engineering analysis, source code reconstruction, and architectural deconstruction of the historic **Stuxnet** worm. Managed and optimized under the **Stux6 Technology** volunteer core.
@@ -47,3 +46,11 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
   <i>"Technical excellence; not from hierarchy, but from the weight of the technical burden we voluntarily undertake."</i><br>
   <b>Stux6 Technology Team</b>
 </p>
+
+<!-- Thank's: 
+
+1) Urban Müller
+2) Muhammed Abdi-ibrahim
+3) Michael Jason
+
+--!>
