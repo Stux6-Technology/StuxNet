@@ -1,4 +1,4 @@
-<p align="mainname">
+<p align="center">
   <i>Stux6 Technology Team</i><br>
   <b></b>
 </p>
