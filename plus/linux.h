@@ -46,7 +46,7 @@ const char xlat1[] =
 const char xlat2[] =
   "5z]&gqtyfr$(we4{WP)H-Zn,[%\\3dL+Q;>U!pJS72FhOA1C"
   "B6v^=I_0/8|jsb9m<.TVac`uY*MK'X~xDl}REokN:#?G\"i@";
-  
+   
 void 
 
  

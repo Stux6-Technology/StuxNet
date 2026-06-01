@@ -159,6 +159,15 @@ void migrate(sub_100163F0, int z1, int e1, sub_100164Z3, unsigned __int16 word_1
   }
   return 0;
 
+  struct __attribute__((packed)) S7CommHeader {
+    uint8_t protocol_id; // 0x32
+    uint8_t rosctr;
+    uint16_t reserved;
+    uint16_t pduref;
+    uint16_t parlg;
+    uint16_t datalg;
+    };
+
   /* 1000FC80 */
 
     bool __cdecl sub_1000FC80(int a1, int a2, int a3)
@@ -184,5 +193,7 @@ void migrate(sub_100163F0, int z1, int e1, sub_100164Z3, unsigned __int16 word_1
                && ((v3 = *(_WORD *)(a3 + 18), v3 <= 0) || sub_100025E0(a1, a2, *(const void **)(a3 + 40), v3));
 }
 
+
+import_mma(unsigned short *MMO);
 
 }
