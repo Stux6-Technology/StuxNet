@@ -1,0 +1,560 @@
+[
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "\tport",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "peekOfCode": "\tport = eval(sys.argv[1])\nelse :\n\tport = 25000\nif len(sys.argv)==3 :\n\tname = sys.argv[2]\nelse :\n\tname = \"datagramSamForward\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tport",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "peekOfCode": "\tport = 25000\nif len(sys.argv)==3 :\n\tname = sys.argv[2]\nelse :\n\tname = \"datagramSamForward\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "peekOfCode": "\tname = sys.argv[2]\nelse :\n\tname = \"datagramSamForward\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=DATAGRAM PORT=\"+str(port)+\" ID=\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW outbound.nickname=\"+name+\" inbound.nickname=\"+name+\" outbound.length=0\\n\")\nsys.stdout.write(sess.recv(10000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "peekOfCode": "\tname = \"datagramSamForward\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=DATAGRAM PORT=\"+str(port)+\" ID=\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW outbound.nickname=\"+name+\" inbound.nickname=\"+name+\" outbound.length=0\\n\")\nsys.stdout.write(sess.recv(10000))\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "sess",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "peekOfCode": "sess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=DATAGRAM PORT=\"+str(port)+\" ID=\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW outbound.nickname=\"+name+\" inbound.nickname=\"+name+\" outbound.length=0\\n\")\nsys.stdout.write(sess.recv(10000))\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", port))\nprint \"waiting on port:\", port",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "s",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "peekOfCode": "s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", port))\nprint \"waiting on port:\", port\nwhile 1:\n    data, addr = s.recvfrom(40000)\n    print data, \" received from \", addr, \"length=\", len(data)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "peekOfCode": "\tname = sys.argv[1]\nelse :\n\tname = \"datagramSamIn\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=DATAGRAM ID=\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "peekOfCode": "\tname = \"datagramSamIn\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=DATAGRAM ID=\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))\nwhile 1 :\n    chunk = sess.recv(10000)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "sess",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "peekOfCode": "sess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=DATAGRAM ID=\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))\nwhile 1 :\n    chunk = sess.recv(10000)\n    sys.stdout.write(chunk+'\\n')",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "peekOfCode": "\tname = sys.argv[1]\nelse :\n\tname = \"datagramSamForward\"\nif len(sys.argv)>2 :\n\tmessage = ''.join([s+' ' for s in sys.argv[2:]]).strip()\nelse :\n\tmessage = \"This is a nice message\"\n# client.py\nport = 7655\nhost = \"localhost\"",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "peekOfCode": "\tname = \"datagramSamForward\"\nif len(sys.argv)>2 :\n\tmessage = ''.join([s+' ' for s in sys.argv[2:]]).strip()\nelse :\n\tmessage = \"This is a nice message\"\n# client.py\nport = 7655\nhost = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tmessage",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "peekOfCode": "\tmessage = ''.join([s+' ' for s in sys.argv[2:]]).strip()\nelse :\n\tmessage = \"This is a nice message\"\n# client.py\nport = 7655\nhost = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tmessage",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "peekOfCode": "\tmessage = \"This is a nice message\"\n# client.py\nport = 7655\nhost = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "port",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "peekOfCode": "port = 7655\nhost = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "host",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "peekOfCode": "host = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "s",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "peekOfCode": "s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tport",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "peekOfCode": "\tport = eval(sys.argv[1])\nelse :\n\tport = 25000\nif len(sys.argv)==3 :\n\tname = sys.argv[2]\nelse :\n\tname = \"rawSamForward\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tport",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "peekOfCode": "\tport = 25000\nif len(sys.argv)==3 :\n\tname = sys.argv[2]\nelse :\n\tname = \"rawSamForward\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "peekOfCode": "\tname = sys.argv[2]\nelse :\n\tname = \"rawSamForward\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=RAW PORT=\"+str(port)+\" ID=\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW\\n\")\nsys.stdout.write(sess.recv(10000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "peekOfCode": "\tname = \"rawSamForward\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=RAW PORT=\"+str(port)+\" ID=\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW\\n\")\nsys.stdout.write(sess.recv(10000))\n# listening server\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "sess",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "peekOfCode": "sess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=RAW PORT=\"+str(port)+\" ID=\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW\\n\")\nsys.stdout.write(sess.recv(10000))\n# listening server\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "s",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "peekOfCode": "s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", port))\nprint \"waiting on port:\", port\nwhile 1:\n    data, addr = s.recvfrom(40000)\n    print data, \" received from \", addr, \"length=\", len(data)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "peekOfCode": "\tname = sys.argv[1]\nelse :\n\tname = \"rawSamIn\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=RAW ID=\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "peekOfCode": "\tname = \"rawSamIn\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=RAW ID=\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))\n# listen incoming messages\nwhile 1 :",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "sess",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "peekOfCode": "sess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=RAW ID=\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))\n# listen incoming messages\nwhile 1 :\n    chunk = sess.recv(10000)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "peekOfCode": "\tname = sys.argv[1]\nelse :\n\tname = \"rawSamForward\"\nif len(sys.argv)>2 :\n\tmessage = ''.join([s+' ' for s in sys.argv[2:]]).strip()\nelse :\n\tmessage = \"This is a nice message\"\n# client.py\nport = 7655\nhost = \"localhost\"",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "peekOfCode": "\tname = \"rawSamForward\"\nif len(sys.argv)>2 :\n\tmessage = ''.join([s+' ' for s in sys.argv[2:]]).strip()\nelse :\n\tmessage = \"This is a nice message\"\n# client.py\nport = 7655\nhost = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tmessage",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "peekOfCode": "\tmessage = ''.join([s+' ' for s in sys.argv[2:]]).strip()\nelse :\n\tmessage = \"This is a nice message\"\n# client.py\nport = 7655\nhost = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tmessage",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "peekOfCode": "\tmessage = \"This is a nice message\"\n# client.py\nport = 7655\nhost = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "port",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "peekOfCode": "port = 7655\nhost = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "host",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "peekOfCode": "host = \"localhost\"\ns = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "s",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "peekOfCode": "s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\ns.bind((\"\", 0))\ns.sendto(\"3.0 \"+name+\" tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\\n\"+message, (host, port))\ns.sendto(\"3.0 \"+name+\" EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAA\\n\"+message, (host, port))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.rawTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tsilent",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "peekOfCode": "\tsilent = \" SILENT=\"+sys.argv[1]\nelse :  silent = \" SILENT=false\"\nif len(sys.argv)>=3 :\n\tport = \" PORT=\"+sys.argv[2]\nelse :  port = \" PORT=25000\"\nif len(sys.argv)>=4 :\n\tname = \" ID=\"+sys.argv[3]\nelse :  name = \" ID=forward\"\nif len(sys.argv)>=5 :\n\thost = \" HOST=\"+sys.argv[4]",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tport",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "peekOfCode": "\tport = \" PORT=\"+sys.argv[2]\nelse :  port = \" PORT=25000\"\nif len(sys.argv)>=4 :\n\tname = \" ID=\"+sys.argv[3]\nelse :  name = \" ID=forward\"\nif len(sys.argv)>=5 :\n\thost = \" HOST=\"+sys.argv[4]\nelse :  host = \"\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "peekOfCode": "\tname = \" ID=\"+sys.argv[3]\nelse :  name = \" ID=forward\"\nif len(sys.argv)>=5 :\n\thost = \" HOST=\"+sys.argv[4]\nelse :  host = \"\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "\thost",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "peekOfCode": "\thost = \" HOST=\"+sys.argv[4]\nelse :  host = \"\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=STREAM\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))\nsock =  socket.socket(",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "sess",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "peekOfCode": "sess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=STREAM\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))\nsock =  socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsock.connect((\"127.0.0.1\",7656));",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "sock",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "peekOfCode": "sock =  socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsock.connect((\"127.0.0.1\",7656));\nsock.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sock.recv(1000))\nsock.send(\"STREAM FORWARD\" + name + host + port + silent + \"\\n\")\nsys.stdout.write(sock.recv(1000))\nl=0\nwhile 1 :\n    chunk = sock.recv(100)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samForward",
+        "documentation": {}
+    },
+    {
+        "label": "accept",
+        "kind": 2,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "def accept() :\n\tsock = socket.socket(\n\t\tsocket.AF_INET, socket.SOCK_STREAM)\n\tsock.connect((\"127.0.0.1\",7656));\n\tsock.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\n\tsys.stdout.write(sock.recv(1000))\n\tsock.send(\"STREAM ACCEPT ID=\" + name + silent+\"\\n\")\n\tprint \"STREAM ACCEPT ID=\"+name+silent\n\tif (silent==\" SILENT=false\") :\n\t\tsys.stdout.write( sock.recv(100) )",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "echo",
+        "kind": 2,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "def echo( sock, lines ) :\n\tl = 0\n\twhile lines==-1 or l<lines :\n\t    chunk = sock.recv(1000)\n\t    if lines!=-1 : l = l + 1\n\t    if not chunk : break\n\t    print chunk\n\t    sock.send(chunk)\n\tprint\nsock1 = accept()",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tsilent",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "\tsilent = \" SILENT=\"+sys.argv[1]\nelse :  silent = \" SILENT=false\"\nif len(sys.argv)>=3 :\n\tname = sys.argv[2]\nelse :  name = \"inTest\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "\tname = sys.argv[2]\nelse :  name = \"inTest\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=STREAM ID=\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))\ndef accept() :",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "sess",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "sess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=STREAM ID=\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABngJSS8xMyF4t82otZmCDhrKjbm-QLMtOLoumwR28ebDHEd4clF6O7aRa3d3yRH7p\\n\")\nsys.stdout.write(sess.recv(1000))\ndef accept() :\n\tsock = socket.socket(\n\t\tsocket.AF_INET, socket.SOCK_STREAM)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tsock",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "\tsock = socket.socket(\n\t\tsocket.AF_INET, socket.SOCK_STREAM)\n\tsock.connect((\"127.0.0.1\",7656));\n\tsock.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\n\tsys.stdout.write(sock.recv(1000))\n\tsock.send(\"STREAM ACCEPT ID=\" + name + silent+\"\\n\")\n\tprint \"STREAM ACCEPT ID=\"+name+silent\n\tif (silent==\" SILENT=false\") :\n\t\tsys.stdout.write( sock.recv(100) )\n\treturn sock",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tl",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "\tl = 0\n\twhile lines==-1 or l<lines :\n\t    chunk = sock.recv(1000)\n\t    if lines!=-1 : l = l + 1\n\t    if not chunk : break\n\t    print chunk\n\t    sock.send(chunk)\n\tprint\nsock1 = accept()\ntime.sleep(1)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "sock1",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "sock1 = accept()\ntime.sleep(1)\nsock2 = accept()\nprint \"Second listening session\"\ntry :\n\techo(sock2, -1)\nexcept :\n\tprint sock2\nif silent == \" SILENT=false\" :\n\tsys.stdout.write(sock1.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "sock2",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "sock2 = accept()\nprint \"Second listening session\"\ntry :\n\techo(sock2, -1)\nexcept :\n\tprint sock2\nif silent == \" SILENT=false\" :\n\tsys.stdout.write(sock1.recv(1000))\nelse :\n\t# we know sock1 is accepted if it receives a byte",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "sock3",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "peekOfCode": "sock3 = accept()\nprint \"First listening session\"\necho(sock1, 2)\nsock1.close()\nprint \"Third listening session\"\necho(sock3, -1)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samIn",
+        "documentation": {}
+    },
+    {
+        "label": "\tsilent",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "peekOfCode": "\tsilent = \" SILENT=\"+sys.argv[1]\nelse :  silent = \" SILENT=false\"\nif len(sys.argv)>=3 :\n\tname = \" ID=\"+sys.argv[2]\nelse :  name = \" ID=testOutStream\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "peekOfCode": "\tname = \" ID=\"+sys.argv[2]\nelse :  name = \" ID=testOutStream\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=STREAM\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW\\n\")\nsys.stdout.write(sess.recv(1000))\nsock =  socket.socket(",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "sess",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "peekOfCode": "sess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=STREAM\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW\\n\")\nsys.stdout.write(sess.recv(1000))\nsock =  socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsock.connect((\"127.0.0.1\",7656));",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "sock",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "peekOfCode": "sock =  socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsock.connect((\"127.0.0.1\",7656));\nsock.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sock.recv(1000))\nsock.send(\"STREAM CONNECT\"+name+\" DESTINATION=tYhjbFlFL38WFuO5eCzTvE0UBr4RfaqWMKlekGeMoB-Ouz7nYaWfiS-9j3jMiZT7FH~pwdmoSREOs2ZbXK84sR59P~pPfeCMxnJrk57f3U9uKzXkesjkKWYco3YAGs-G8sw8Fu2FBx0Do57yBdA9~j8Zq6pMjmgPBXCLuXG3vo0Z8zUWCjApJyFY6OXYopHck9Fz9vKy7YhC6zXFHfEuNHVkAooduiLd~aCoGij0TW3lH2rTVU-lx-DUdi6edxQ5-RvDNkXfikvytoCpRkivbNVytjCJLk~7RNU4FpBD20wTZWNJmEG3OY3cjNjawJVFdNjtgczh9K7gZ7ad-NjVjZVhXEj1lU8mk~vAH-2QE5om8dstWUwWoNDwmVDlvIJNKzQmahG~VrpFexFHXO0n3fKIXcSgWGOHDExM8w9neCt7AxUjxPDtXXuYNW~bRwcfiL-C9~z4K9rmwiTPZX0lmsToSXTF28l7WAoj~TMT9kZAjQeFRRWU5oW5oxVuonVvAAAA\"+silent+\"\\n\")\n# wait for acknowledgement before sending data, if we asked for it\nif (silent==\" SILENT=false\") :\n\tsys.stdout.write(sock.recv(1000))\nfor i in range(1,11) :",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOut",
+        "documentation": {}
+    },
+    {
+        "label": "\tsilent",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "peekOfCode": "\tsilent = \" SILENT=\"+sys.argv[1]\nelse :  silent = \" SILENT=false\"\nif len(sys.argv)>=3 :\n\tname = \" ID=\"+sys.argv[2]\nelse :  name = \" ID=testOutStream\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "documentation": {}
+    },
+    {
+        "label": "\tname",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "peekOfCode": "\tname = \" ID=\"+sys.argv[2]\nelse :  name = \" ID=testOutStream\"\nsess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=STREAM\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW\\n\")\nsys.stdout.write(sess.recv(1000))\nsock =  socket.socket(",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "documentation": {}
+    },
+    {
+        "label": "sess",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "peekOfCode": "sess = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsess.connect((\"127.0.0.1\",7656));\nsess.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sess.recv(1000))\nsess.send(\"SESSION CREATE STYLE=STREAM\"+name+\" DESTINATION=EYUpJFeW9tiubXR0aOjvCJ~ndj3xN0Wn-ljuGdbpOEttPg7nj0VCTOQDJ~FAolzn9FIDdmR3VjM0OFFDT46Q5HN4vShXFE2VNC8e3~GjzxJfaJhijRC2R9oIOzsNlzKtInD2o9lh0PxPioNMCigwmgWuqlQHs4tjWeaYRAtooHxbrtuoCIhIdGfyVV-nAcPiyYbouKq3leETXE~4kBXm-LfWfyPtrv6OuDk3GBVVcthv19GYBmnl2YI8HpJjc-G-TvNkgYishjzIJyEW-Xrpy43R4ZBXlyQqnheGLlbOEY8NLDbyNHLRMMOGbcr~67SVE3Iw3RqQ3Dhrkq2FCaQwcDucfIUCCbOfCZgu0hlnCkS42xsUvegQeiwMxbdI~h9v7vcR3yFFOrHX6WQvIZSbFLKNGArGJcfmOJVLqw1wTC4AgYXjk3csVDPd-QWbMXOuodyBgrg27Ds2BBYTsVXWskoo6ASsMIQZ6jMfL7PkY9dPLCRParIyzb9aPmf~MntNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHNqwgkhJnBW4ymaRsdVmITAha-ff0UiALfKSlznqp5HcSewgMHbzQ0I01TQytFnW\\n\")\nsys.stdout.write(sess.recv(1000))\nsock =  socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsock.connect((\"127.0.0.1\",7656));",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "documentation": {}
+    },
+    {
+        "label": "sock",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "peekOfCode": "sock =  socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\nsock.connect((\"127.0.0.1\",7656));\nsock.send(\"HELLO VERSION MIN=3.0 MAX=3.0\\n\")\nsys.stdout.write(sock.recv(1000))\nsock.send(\"STREAM CONNECT\"+name+\" DESTINATION=http://amiga.i2p\"+silent+\"\\n\")\n# wait for acknowledgement before sending data, if we asked for it\nif (silent==\" SILENT=false\") :\n\tsys.stdout.write(sock.recv(1000))\nwhile (1) :",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.samOutWithNaming",
+        "documentation": {}
+    },
+    {
+        "label": "\tport",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "peekOfCode": "\tport = eval(sys.argv[1])\nelse :  port = 25000\n#create an INET, STREAMing socket\nserversocket = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\n#bind the socket to a public host, \n# and a well-known port\nserversocket.bind((\"0.0.0.0\", port))\n    #become a server socket\nserversocket.listen(1)",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "documentation": {}
+    },
+    {
+        "label": "serversocket",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "peekOfCode": "serversocket = socket.socket(\n    socket.AF_INET, socket.SOCK_STREAM)\n#bind the socket to a public host, \n# and a well-known port\nserversocket.bind((\"0.0.0.0\", port))\n    #become a server socket\nserversocket.listen(1)\n        #accept connections from outside\n(clientsocket, address) = serversocket.accept()\n        #now do something with the clientsocket",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "documentation": {}
+    },
+    {
+        "label": "i",
+        "kind": 5,
+        "importPath": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "peekOfCode": "i = 0\nwhile 1 :\n    chunk = clientsocket.recv(1024)\n    i = i + 1\n    sys.stdout.write(str(i)+' '+chunk)\n    if not chunk: break\n    clientsocket.send(str(i)+' '+chunk)\nclientsocket.close()\nprint",
+        "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "documentation": {}
+    }
+]
