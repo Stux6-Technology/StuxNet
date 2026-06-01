@@ -1,0 +1,57 @@
+.\"*******************************************************************
+.\"
+.\" This file was generated with po4a. Translate the source file.
+.\"
+.\"*******************************************************************
+.TH I2PROUTER 1 "November 27, 2021" "" I2P
+
+.SH NOME
+i2prouter \- iniciar e interromper o roteador I2P
+
+.SH SINOPSE
+\fBi2prouter\fP
+{\fIconsole\fP|\fIstart\fP|\fIstop\fP|\fIgraceful\fP|\fIrestart\fP|\fIcondrestart\fP|\fIstatus\fP|\fIdump\fP|\fIinstall\fP|\fIremove\fP}
+.br
+
+.SH DESCRIÇÃO
+Controlar o serviço I2P.
+
+.IP \fBconsole\fP
+Executa a I2P como uma aplicação em modo console sob o usuário atual.
+
+.IP \fBstart\fP
+Inicia o serviço I2P.
+
+.IP \fBstop\fP
+Interrompe o serviço I2P.
+
+.IP \fBrestart\fP
+Interrompe o serviço I2P e, em seguida, o inicia.
+
+.IP \fBcondrestart\fP
+Reiniciar o serviço I2P apenas se estiver em execução.
+
+.IP \fBgraceful\fP
+Parar a I2P graciosamente (pode demorar até 11 minutos)
+
+.IP \fBinstall\fP
+Instale o initscript para iniciar o I2P automaticamente quando o sistema for
+inicializado.
+
+.IP \fBremove\fP
+Desinstalar o initscript que foi instalado com \fBinstall\fP
+
+.IP \fBstatus\fP
+Imprime se o serviço I2P está em execução.
+
+.IP \fBdump\fP
+Despeja os threads atuais no \fBwrapper.log\fP.
+
+.SH "RELATANDO ERROS"
+Por favor, insira um problema em
+.UR https://i2pgit.org/i2p\-hackers/i2p.i2p/\-/issues
+the I2P GitLab server
+.UE .
+
+.SH "VER TAMBÉM"
+\fBi2prouter\-nowrapper\fP(1)

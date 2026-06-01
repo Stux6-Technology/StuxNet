@@ -1,0 +1,40 @@
+name: Dockerhub
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+    - 'i2p-*.*.*'
+    branches:
+    - master
+    - docker-arm
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Set env
+        run:
+          sudo apt-get install -y sed;
+          echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" | sed 's|master|latest|g' >> $GITHUB_ENV
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          tags: geti2p/i2p:${{ env.RELEASE_VERSION }}
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          tags: geti2p/i2p.i2p:${{ env.RELEASE_VERSION }}

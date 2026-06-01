@@ -1,0 +1,204 @@
+Instructions to upload to launchpad PPA
+
+You must have a GPG key already uploaded to the
+usual public key servers, where launchpad can find it.
+
+Overview
+--------
+
+We currently copy the launchpad builds to our debian repo both
+for use in both the ubuntu and debian distros. This is much easier
+than doing debian builds ourselves.
+
+Versions are as follows:
+
+Min version	Max version		Uses src pkg	Copied to Debian	Notes
+-----------	-----------		------------	----------------	-----
+n/a					resolute	forky, sid		CANNOT BUILD ON LAUNCHPAD - when fixed: ant debian-release-tarball
+resolute				resolute	trixie			CURRENTLY BROKEN USE JAMMY - when fixed: ant debian-release-tarball
+questing				jammy					Don't bother to build, use jammy
+jammy		noble			jammy		bullseye, bookworm	ant jammy-release-tarball
+
+Unsupported (No Java 17):
+bionic		--			bionic		--
+focal		--			bionic		--
+
+Unsupported (Java 7):
+precise		saucy   		precise		wheezy
+trusty		wily			precise		jessie, stretch
+
+Unsupported (ant < 1.9.8)
+xenial		yakkety			xenial		--
+
+
+
+
+
+Prep (first time only)
+----------------------
+
+- Make a launchpad account
+- Log into launchpad
+- Get your GPG fingerprint (gpg -K --fingerprint)
+- Add your GPG fingerprint at the form on
+  https://launchpad.net/~/+editpgpkeys
+- Wait for the encrypted email response
+- Decrypt and click the confirmation link in the email
+- Click confirm on the page
+- Make a PPA, lets call it 'test'
+- OPTIONAL: Go to i2p.packages PPA and copy over existing I2P to your PPA:
+  (select "copy existing binaries")
+    jammy and higher
+
+- you need the following packages
+  sudo apt-get install devscripts dput dh_systemd bash-completion
+
+
+Generate files to upload
+------------------------
+
+- check out clean copy of release:
+  git clone -l . /path/to/releasedir
+
+- export TZ=UTC
+- cd i2p.i2p.foobar
+- copy debian-alt/(series)/* to debian/
+- edit debian/changelog to add the release at the top
+  * series MUST be resolute
+  * version MUST be 2.xx.0-1ubuntu1 for resolute
+    For jammy, the names are different.
+    next version for fixes would be 2.xx.0-2ubunutu1
+  * name and email MUST EXACTLY match what's in your GPG keyring
+    or the signing will fail.
+    (or add -kkeyid argument to debuild, which you must do
+     if you want to sign with a subkey. As of recent versions,
+     the keyid argument must be a 16-char fingerprint, not a short key.)
+    run gpg -K to list your private keys
+- Remove patch files in debian/patches that are not listed in debian/patches/series
+- ant debian-release-tarball (this is currently for resolute and higher)
+  this will make a directory ../i2p-2.xx.0-0-xxxxxxxx/
+  and a tarball ../i2p_2.xx.0.orig.tar.bz2
+- cp debian/changelog ../i2p-2.xx.0-0-xxxxxxxx/debian/
+- cp debian-alt/(series)/(other files besides changelog) to ../i2p-2.xx.0-0-xxxxxxxx/debian/
+- cd ../i2p-2.xx.0-0-xxxxxxxx/
+- Build the *1ubuntu1* files:
+  If you have NOT done a successful dput for this release yet:
+    debuild -S -sa -kkeyid
+  otherwise, if just fixing up the control files, patches, etc:
+    debuild -S -sd -kkeyid
+  (note: no space allowed in -kkeyid)
+  If you get a dpkg-checkbuilddeps error for jammy,
+  add a -d option, e.g. debuild -d -S -sa -kkeyid
+- If patches fail, you must fix them up, either manually or with quilt
+  (quilt instructions go here)
+
+- You will now have the following files in ..:
+  i2p_2.xx.0-1ubuntu1.debian.tar.xz
+  i2p_2.xx.0-1ubuntu1.dsc
+  i2p_2.xx.0-1ubuntu1_source.changes
+  i2p_2.xx.0-1ubuntu1_source.build
+- And from the copy above:
+  i2p_2.xx.0.orig.tar.bz2
+
+Upload to launchpad
+-------------------
+
+- cd ..
+- Upload to launchpad:
+  dput ppa:your-lp-id/your-ppa-name i2p_2.xx.0-1ubuntu1_source.changes
+
+This will upload the following files:
+  i2p_2.xx.0-1ubuntu1.dsc            (the GPG signature)
+  i2p_2.xx.0-1ubuntu1.debian.tar.xz  (basically the debian/ directory tarball)
+  i2p_2.xx.0-1ubuntu1_source.changes (the changelog text file)
+  i2p_2.xx.0.orig.tar.bz2            (the source tarball)
+
+Note: If you didn't add your GPG fingerprint to your launchpad account
+way up there above in step 2 or so, the upload will work,
+but you will get no email back, and it will never build or show up on
+the pending-build page.
+
+Wait for it to build and be published.
+Could be minutes to hours.
+
+The amd64 build produces one deb:
+   libjbigi-jni (amd64)
+The i386 build produces three debs:
+   i2p-doc (arch-independent), i2p-router (arch-independent), and libjbigi-jni (i386)
+So the build isn't done until both arch builds are complete.
+Don't do anything else until both builds are done and published.
+
+If it works, copy the series you are running (e.g. yakkety) in your PPA
+so that you can test.
+  (select "copy existing binaries")
+  Wait a few minutes for that to happen
+
+Test
+----
+
+Add your PPA following the instructions at http://i2p-projekt.i2p/en/download/debian:
+     sudo apt-add-repository ppa:your-lp-id/your-ppa-name
+     sudo apt-get update
+     sudo apt-get install i2p
+     mv ~/.i2p ~/.i2p-save
+     i2prouter start
+     (test...)
+     stop router
+     sudo dpkg-reconfigure i2p
+     (reconfigure as a service)
+     (i2p should start as a service. test...)
+
+
+Release
+-------
+
+Then copy from your PPA to the i2p-maintainers PPA.
+Then in the i2p-maintainers PPA, copy to other versions as specified in the table
+at the top of this document.
+Did a new series open up since the last time you did this? Copy to the new one also.
+  (select "copy existing binaries")
+
+
+Creating milestone, release, and uploading files
+----------------------------------------------
+
+You may do this either before or after doing the Launchpad builds.
+
+You must first create a milestone, then create a release
+and attach it to the milestone.
+
+(Enable referer sending in your browser if necessary)
+
+Go to https://launchpad.net/i2p/trunk
+Down at bottom, click 'create milestone'
+    Name: 2.xx.0 (NOT i2p 2.xx.0)
+    Code name: empty
+    Date targeted: Actual release date
+    Tags: empty
+    Summary: empty
+Click 'create milestone'
+Now you are back on https://launchpad.net/i2p/trunk
+At your milestone, 'release now'
+    Date released: Actual release date
+    Release notes: empty
+    Changelog: empty
+Click 'create release'
+Now you are on the page for that milestone
+Click 'add download file'
+For each of the four files
+    i2psource_2.xx.0.tar.bz2
+      Description: I2P 2.xx.0 Source Code
+      Sig: i2psource_2.xx.0.tar.bz2.sig
+      File Content Type: Code Release Tarball
+    i2pinstall_2.xx.0_windows.exe
+      Description: I2P 2.xx.0 Installer for Windows
+      Sig: i2pinstall_2.xx.0_windows.exe.sig
+      File Content Type: Installer File
+    i2pinstall_2.xx.0.jar
+      Description: I2P 2.xx.0 Installer (Linux / OSX / FreeBSD / Solaris)
+      Sig: i2pinstall_2.xx.0.jar.sig
+      File Content Type: Installer File
+    i2pupdate_2.xx.0.zip
+      Description: I2P 2.xx.0 Update
+      Sig: i2pupdate_2.xx.0.zip.sig
+      File Content Type: Installer File

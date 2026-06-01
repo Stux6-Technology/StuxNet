@@ -1,0 +1,126 @@
+package net.i2p.crypto;
+
+import java.security.DigestException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.concurrent.LinkedBlockingQueue;
+
+import net.i2p.I2PAppContext;
+import net.i2p.data.Hash;
+
+/** 
+ * Defines a wrapper for SHA-256 operation.
+ * 
+ * As of release 0.8.7, uses java.security.MessageDigest by default.
+ * As of release 0.9.25, uses only MessageDigest.
+ * GNU-Crypto gnu.crypto.hash.Sha256Standalone
+ * is removed as of 0.9.28.
+ */
+public final class SHA256Generator {
+    private final LinkedBlockingQueue<MessageDigest> _digests;
+
+    /**
+     *  @param context unused
+     */
+    public SHA256Generator(I2PAppContext context) {
+        _digests = new LinkedBlockingQueue<MessageDigest>(32);
+    }
+    
+    public static final SHA256Generator getInstance() {
+        return I2PAppContext.getGlobalContext().sha();
+    }
+    
+    /**
+     * Calculate the SHA-256 hash of the source and cache the result.
+     * @param source what to hash
+     * @return hash of the source
+     */
+    public final Hash calculateHash(byte[] source) {
+        return calculateHash(source, 0, source.length);
+    }
+
+    /**
+     * Calculate the hash and cache the result.
+     * @param source what to hash
+     */
+    public final Hash calculateHash(byte[] source, int start, int len) {
+        MessageDigest digest = acquire();
+        digest.update(source, start, len);
+        byte rv[] = digest.digest();
+        releaseit(digest);
+        return Hash.create(rv);
+    }
+    
+    /**
+     * Use this if you only need the data, not a Hash object.
+     * Does not cache.
+     * @param out needs 32 bytes starting at outOffset
+     */
+    public final void calculateHash(byte[] source, int start, int len, byte out[], int outOffset) {
+        MessageDigest digest = acquire();
+        digest.update(source, start, len);
+        try {
+            digest.digest(out, outOffset, Hash.HASH_LENGTH);
+        } catch (DigestException e) {
+            throw new RuntimeException(e);
+        } finally {
+            releaseit(digest);
+        }
+    }
+    
+    /**
+     *  Get a MessageDigest instance from the pool,
+     *  for uses where the one-shot calculateHash()
+     *  would require copying the data.
+     *  Return the instance via release() when done.
+     *
+     *  @since public since 0.9.66
+     */
+    public MessageDigest acquire() {
+        MessageDigest rv = _digests.poll();
+        if (rv != null)
+            rv.reset();
+        else
+            rv = getDigestInstance();
+        return rv;
+    }
+    
+    /**
+     *  Release a digest back to the pool
+     *  @param digest must be SHA-256
+     *  @since public since 0.9.66
+     */
+    public void release(MessageDigest digest) {
+        if (!digest.getAlgorithm().equals("SHA-256"))
+            throw new IllegalArgumentException();
+        _digests.offer(digest);
+    }
+    
+    /**
+     *  Release a digest back to the pool - internal version
+     *  @since 0.9.66 renamed from release()
+     */
+    private void releaseit(MessageDigest digest) {
+        _digests.offer(digest);
+    }
+    
+    /**
+     *  Return a new MessageDigest from the system libs.
+     *  @since 0.8.7, public since 0.8.8 for FortunaStandalone
+     */
+    public static MessageDigest getDigestInstance() {
+        try {
+            return MessageDigest.getInstance("SHA-256");
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.err.println("Usage: SHA256Generator 'text to hash'");
+            System.exit(1);
+        }
+        System.out.println(net.i2p.data.Base64.encode(getInstance().calculateHash(net.i2p.data.DataHelper.getUTF8(args[0])).getData()));
+    }
+}

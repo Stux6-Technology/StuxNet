@@ -1,0 +1,22 @@
+apply plugin:'war'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'java/src'
+        }
+    }
+}
+
+dependencies {
+    providedCompile project(':core')
+    providedCompile project(':apps:jetty')
+}
+
+war {
+    rootSpec.exclude('**/*.class')
+}
+
+artifacts {
+    archives war
+}

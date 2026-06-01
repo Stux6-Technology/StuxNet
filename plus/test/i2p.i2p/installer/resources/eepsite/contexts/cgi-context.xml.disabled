@@ -1,0 +1,88 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_10_0.dtd">
+
+<!--
+  CGI was removed from Jetty 12.
+  This is a FCGI replacement for the cgi-context.xml configuration which
+  served CGI scripts under /cgi-bin.
+  This does NOT serve CGI scripts under the base context.
+  Scripts may have any suffix, they do not have to be named *.cgi
+
+  Prerequisites:
+  - sudo apt install spawn-fcgi fcgiwrap
+  - Install additional Jetty 12 jars. See below.
+
+  Copy this file to your eepsite's context dir (probably ~/.i2p/eepsite/contexts)
+  and rename it to cgi-context.xml
+  Change the cgiroot Arg to the full path to the directory containing your cgi files
+  If desired, change the contextPath (URI) for the web URI for your cgi files (currently /cgi-bin)
+
+  Install additional Jetty 12 jars (standard install only):
+  - Download https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/12.0.28/jetty-home-12.0.28.zip
+  - Unzip to a temporary directory
+  - Copy the following files to your I2P installation lib/ directory ($I2P/lib):
+    * lib/jetty-client-12.0.28.jar
+    * lib/jetty-proxy-12.0.28.jar
+    * lib/fcgi/jetty-fcgi-client-12.0.28.jar
+    * lib/fcgi/jetty-fcgi-proxy-12.0.28.jar
+
+  OR Install additional Jetty 12 jars (Debian/Ubuntu package install only):
+  - sudo apt install libjetty12-extra-java
+  - cd /usr/share/i2p/lib
+  - sudo ln -s /usr/share/java/jetty12-client.jar
+  - sudo ln -s /usr/share/java/jetty12-proxy.jar
+  - sudo ln -s /usr/share/java/jetty12-fcgi-client.jar
+  - sudo ln -s /usr/share/java/jetty12-fcgi-proxy.jar
+
+  Create a start-fcgi script:
+
+    #!/bin/bash
+    export SKT=/var/tmp/fcgi-socket-0
+    rm -f $SKT
+    /usr/bin/spawn-fcgi -s $SKT -F 8 /usr/sbin/fcgiwrap > /var/tmp/fastcgi.log 2>&1 &
+
+  Or, to use standard sockets, edit the XML below to remove the unixDomainPath line and use:
+
+    #!/bin/bash
+    /usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -F 8 /usr/sbin/fcgiwrap > /var/tmp/fastcgi.log 2>&1 &
+
+  Start the fcgi-server with
+    start-fcgi
+  If you forget this, cgi scripts will return a 502 error.
+
+  Stop I2P and restart
+
+  Ref:
+  https://jetty.org/docs/jetty/12/operations-guide/protocols/index.html#fcgi
+
+-->
+
+<Configure class="org.eclipse.jetty.server.handler.ContextHandler">
+  <New id="cgiroot" class="java.lang.String">
+    <Arg>./eepsite/cgi-bin</Arg>
+  </New>
+  <Set name="contextPath">/cgi-bin</Set>
+  <Set name="baseResourceAsString"><Ref refid="cgiroot" /></Set>
+  <Set name="handler">
+    <New class="org.eclipse.jetty.server.handler.PathMappingsHandler">
+      <Call name="addMapping">
+        <Arg>
+          <New class="org.eclipse.jetty.http.pathmap.ServletPathSpec"><Arg>/</Arg></New>
+        </Arg>
+        <Arg>
+          <New class="org.eclipse.jetty.fcgi.proxy.FastCGIProxyHandler">
+            <Arg>(https?)://([^/]+)(.*)</Arg>
+            <!-- host:port ignored since if using a domain socket, but argument must be here -->
+            <Arg>http://localhost:9000$3</Arg>
+            <Arg><Ref refid="cgiroot" /></Arg>
+
+            <Set name="scriptPattern"><Call class="java.util.regex.Pattern" name="compile"><Arg>/cgi-bin(.+)</Arg></Call></Set>
+            <Set name="fastCGISecure">false</Set>
+            <!-- Remove this line and set the correct port above if using standard sockets -->
+            <Set name="unixDomainPath"><Call class="java.nio.file.Path" name="of"><Arg>/var/tmp/fcgi-socket-0</Arg></Call></Set>
+          </New>
+        </Arg>
+      </Call>
+    </New>
+  </Set>
+</Configure>

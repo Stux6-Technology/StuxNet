@@ -1,0 +1,208 @@
+plugins {
+    id 'java-library'
+    id 'war'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'java/src'
+            srcDir 'java/build/messages-src'
+            srcDir 'java/build/messages-proxy-src'
+        }
+    }
+    test {
+        java {
+            srcDir 'java/test/junit'
+        }
+    }
+}
+
+dependencies {
+    api project(':core')
+    api project(':apps:ministreaming')
+    api 'gnu.getopt:java-getopt:1.0.13'
+    api project(':apps:jetty')
+
+    // seems like it should be compileOnly but that doesn't work
+    implementation 'org.apache.ant:ant:1.10.14'
+    api fileTree("../jetty/apache-tomcat-${tomcatVersion}")
+}
+
+// Create the java files from the po files. The jar task will compile them.
+// This requires gettext 0.19 or higher.
+// We don't support the "slow way"
+task bundleProxy {
+    doLast {
+        if (!(new File("$buildDir/classes/java/main/net/i2p/i2ptunnel/proxy/messages_de.class")).exists())
+            println "apps/i2ptunnel/java/bundle-messages-proxy.sh".execute().text
+    }
+}
+
+task bundle {
+    doLast {
+        if (!(new File("$buildDir/classes/java/main/net/i2p/i2ptunnel/web/messages_de.class")).exists())
+            println "apps/i2ptunnel/java/bundle-messages.sh".execute().text
+    }
+}
+
+task i2ptunnelJar(type: Jar) {
+    from sourceSets.main.output 
+    exclude '**/web/*.class'
+    exclude '**/ui/*.class'
+    exclude '**/EditBean.class'
+    exclude '**/IndexBean.class'
+    manifest {
+        attributes 'Main-Class': 'net.i2p.i2ptunnel.I2PTunnel'
+        attributes 'Class-Path': 'i2p.jar mstreaming.jar'
+    }
+    from ('resources', {
+        into "net/i2p/i2ptunnel/resources"
+    })
+    from ('../routerconsole/jsp', {
+        include 'themes/console/*/*.css'
+        include 'themes/console/images/i2plogo.png'
+        include 'themes/console/images/favicon.ico'
+        include 'themes/console/images/itoopie_sm.png'
+        into "net/i2p/i2ptunnel/resources"
+    })
+}
+
+task helpersJar(type: Jar) {
+    from sourceSets.main.output
+    include '**/EditBean.class'
+    include '**/IndexBean.class'
+    include 'net/i2p/i2ptunnel/ui/**'
+    include 'net/i2p/i2ptunnel/web/SSLHelper.class'
+    archiveBaseName='i2pTunnelHelpers'
+}
+
+task copyJsps(type: Copy) {
+    doFirst {
+        def f = file("$buildDir/jsp_copy")
+        f.mkdirs()
+    }
+    from("jsp")
+    include("**/*.jsp")
+    include("**/*.jsi")
+    into("$buildDir/jsp_copy")
+
+    doLast {
+        fileTree("$buildDir/jsp_copy").getFiles().each {
+            if (it.getName().endsWith("jsi"))
+                it.setLastModified(0)
+        }
+    }
+}
+
+
+task precompileJsp(type : JavaExec) {
+    dependsOn copyJsps
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'net.i2p.servlet.util.JspC'
+
+    jvmArgs "-Dtomcat.util.scan.StandardJarScanFilter.jarsToSkip=commons-collections.jar,junit.jar,junit4.jar"
+    jvmArgs "-Dbuild.reproducible=true"
+
+    args "-d"
+    args "jsp/WEB-INF/classes"
+    args "-v"
+    args "-p"
+    args "net.i2p.i2ptunnel.jsp"
+    args "-webinc"
+    args "$buildDir/web-fragment.xml"
+    args "-webapp"
+    args "$buildDir/jsp_copy"
+    doLast {
+        def output = new File("$buildDir/compiledJsps")
+        output.mkdirs()
+        ant.javac(srcDir: "jsp/WEB-INF/classes",
+                    classpath: sourceSets.main.runtimeClasspath.asPath,
+                    debug : true,
+                    includeAntRuntime : false,
+                    deprecation : "on",
+                    source: project.sourceCompatibility,
+                    target: project.targetCompatibility,
+                    destDir:file("$buildDir/compiledJsps"))
+
+        def fragment = file("$buildDir/web-fragment.xml").text
+        def templateXML = file("jsp/web.xml").text
+        def webXML = templateXML.replace("<!-- precompiled servlets -->", fragment)
+
+        def multipart = "<multipart-config>" +
+                        "<max-file-size>134217728</max-file-size>" +
+                        "<max-request-size>134217728</max-request-size>" +
+                        "<file-size-threshold>262144</file-size-threshold>" +
+                        "</multipart-config>"
+
+        def multipartServlets = ["register"]
+                                
+
+        multipartServlets = multipartServlets.collect {
+            "<servlet-class>net.i2p.i2ptunnel.jsp.${it}_jsp</servlet-class>"
+        }
+
+        multipartServlets.each {
+            webXML = webXML.replace(it, it + multipart)
+        }
+
+        file("$buildDir/web.xml").text = webXML
+    }
+
+
+}
+
+i2ptunnelJar.dependsOn bundleProxy
+war.dependsOn bundle,precompileJsp
+
+// not needed unless we're building for both android and regular
+task tempBeansJar(type: Jar) {
+    from sourceSets.main.output
+    include '**/EditBean.class'
+    include '**/ui/*.class'
+    include '**/IndexBean.class'
+    archiveBaseName = 'temp-beans'
+}
+
+// only for android
+task uiJar(type: Jar) {
+    archiveBaseName = 'i2ptunnel-ui'
+    from sourceSets.main.output
+    include '**/ui/*.class'
+    manifest {
+        attributes 'Class-Path' : 'i2p.jar mstreaming.jar i2ptunnel.jar'
+    }
+}
+
+artifacts {
+    archives i2ptunnelJar,war   //, tempBeansJar, uiJar
+}
+
+war {
+    duplicatesStrategy 'exclude'
+    include '**/EditBean.class'
+    include '**/ui/*.class'
+    include '**/IndexBean.class'
+    from 'jsp'
+    from ("$buildDir/compiledJsps") {
+        include '**/*.class'
+        into "WEB-INF/classes"
+    }
+    rootSpec.exclude('**/*.jar')
+    rootSpec.exclude('/net/i2p/i2ptunnel/*.class')
+    rootSpec.exclude('/net/i2p/i2ptunnel/access')
+    rootSpec.exclude('/net/i2p/i2ptunnel/irc')
+    rootSpec.exclude('/net/i2p/i2ptunnel/localServer')
+    rootSpec.exclude('/net/i2p/i2ptunnel/proxy')
+    rootSpec.exclude('/net/i2p/i2ptunnel/socks')
+    rootSpec.exclude('/net/i2p/i2ptunnel/streamr')
+    rootSpec.exclude('/net/i2p/i2ptunnel/udp')
+    rootSpec.exclude('/net/i2p/i2ptunnel/udpTunnel')
+    from("jsp") {
+        exclude 'web.xml'
+        exclude '*.jsi'
+        exclude '*.jsp'
+    }
+    webXml = file("$buildDir/web.xml")
+}
+

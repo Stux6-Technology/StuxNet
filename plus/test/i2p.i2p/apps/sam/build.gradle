@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'java/src'
+        }
+    }
+    test {
+        java {
+            srcDir 'java/test'
+        }
+    }
+}
+
+dependencies {
+    api project(':core')
+    api project(':apps:ministreaming')
+    api 'gnu.getopt:java-getopt:1.0.13'
+}

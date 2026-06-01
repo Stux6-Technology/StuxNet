@@ -1,0 +1,156 @@
+# I2P
+# Copyright (C) 2009 The I2P Project
+# This file is distributed under the same license as the routerconsole package.
+# To contribute translations, see http://www.i2p2.de/newdevelopers
+# foo <foo@bar>, 2009.
+# 
+# Translators:
+# yume, 2019
+# zzzi2p, 2019
+# gmind, 2019
+# Irina Fedulova <istartlin@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: I2P routerconsole\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-17 18:42+0000\n"
+"PO-Revision-Date: 2019-12-17 17:16+0000\n"
+"Last-Translator: Irina Fedulova <istartlin@gmail.com>, 2020\n"
+"Language-Team: Russian (Russia) (https://www.transifex.com/otf/teams/12694/ru_RU/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#. NOTE TO TRANSLATORS: Feel free to translate all these as you see fit, there
+#. are several options...
+#. spaces or not, '.' or not, plural or not. Try not to make it too long, it
+#. is used in
+#. a lot of tables.
+#. milliseconds
+#. Note to translators, may be negative or zero, 2999 maximum.
+#. {0,number,####} prevents 1234 from being output as 1,234 in the English
+#. locale.
+#. If you want the digit separator in your locale, translate as {0}.
+#. alternates: msec, msecs
+#: ../java/src/net/i2p/data/DataHelper.java:1383
+#: ../java/src/net/i2p/data/DataHelper.java:1436
+#, java-format
+msgid "{0,number,####} ms"
+msgid_plural "{0,number,####} ms"
+msgstr[0] "{0,number,####} мс"
+msgstr[1] "{0,number,####} мс"
+msgstr[2] "{0,number,####} мс"
+msgstr[3] "{0,number,####} мс"
+
+#. seconds
+#. alternates: secs, sec. 'seconds' is probably too long.
+#: ../java/src/net/i2p/data/DataHelper.java:1387
+#: ../java/src/net/i2p/data/DataHelper.java:1438
+#, java-format
+msgid "{0} sec"
+msgid_plural "{0} sec"
+msgstr[0] "{0} с."
+msgstr[1] "{0} с."
+msgstr[2] "{0} с"
+msgstr[3] "{0} с"
+
+#. minutes
+#. alternates: mins, min. 'minutes' is probably too long.
+#: ../java/src/net/i2p/data/DataHelper.java:1391
+#: ../java/src/net/i2p/data/DataHelper.java:1440
+#, java-format
+msgid "{0} min"
+msgid_plural "{0} min"
+msgstr[0] "{0} мин."
+msgstr[1] "{0} мин."
+msgstr[2] "{0} мин."
+msgstr[3] "{0} мин."
+
+#. hours
+#. alternates: hrs, hr., hrs.
+#: ../java/src/net/i2p/data/DataHelper.java:1395
+#: ../java/src/net/i2p/data/DataHelper.java:1442
+#, java-format
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] "{0} час"
+msgstr[1] "{0} часа"
+msgstr[2] "{0} часов"
+msgstr[3] "{0} часов"
+
+#. days
+#: ../java/src/net/i2p/data/DataHelper.java:1398
+#: ../java/src/net/i2p/data/DataHelper.java:1445
+#, java-format
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] "{0} день"
+msgstr[1] "{0} дня"
+msgstr[2] "{0} дней"
+msgstr[3] "{0} дней"
+
+#. years
+#: ../java/src/net/i2p/data/DataHelper.java:1401
+#: ../java/src/net/i2p/data/DataHelper.java:1448
+#, java-format
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] "{0} год"
+msgstr[1] "{0} года"
+msgstr[2] "{0} лет"
+msgstr[3] "{0} лет"
+
+#: ../java/src/net/i2p/data/DataHelper.java:1403
+#: ../java/src/net/i2p/data/DataHelper.java:1450
+msgid "n/a"
+msgstr "н/д"
+
+#: ../java/src/net/i2p/data/DataHelper.java:1432
+#, java-format
+msgid "{0,number,####} ns"
+msgid_plural "{0,number,###} ns"
+msgstr[0] "{0,number,##} нс"
+msgstr[1] "{0,number,###} нс"
+msgstr[2] "{0,number,###} нс"
+msgstr[3] "{0,number,###} нс"
+
+#: ../java/src/net/i2p/data/DataHelper.java:1434
+#, java-format
+msgid "{0,number,####} μs"
+msgid_plural "{0,number,###} μs"
+msgstr[0] "{0,number,##} мкс"
+msgstr[1] "{0,number,###} мкс"
+msgstr[2] "{0,number,###} мкс"
+msgstr[3] "{0,number,###} мкс"
+
+#: ../java/src/net/i2p/util/LogRecordFormatter.java:106
+msgid "CRIT"
+msgstr "CRIT"
+
+#: ../java/src/net/i2p/util/LogRecordFormatter.java:106
+msgid "DEBUG"
+msgstr "DEBUG"
+
+#: ../java/src/net/i2p/util/LogRecordFormatter.java:106
+msgid "ERROR"
+msgstr "ERROR"
+
+#: ../java/src/net/i2p/util/LogRecordFormatter.java:106
+msgid "INFO"
+msgstr "INFO"
+
+#: ../java/src/net/i2p/util/LogRecordFormatter.java:106
+msgid "WARN"
+msgstr "WARN"
+
+#: ../java/src/net/i2p/util/LogWriter.java:161
+#, java-format
+msgid "{0} similar message omitted"
+msgid_plural "{0} similar messages omitted"
+msgstr[0] "{0} похожее сообщение пропущено"
+msgstr[1] "{0} похожих сообщения пропущено"
+msgstr[2] "{0} похожих сообщений пропущено"
+msgstr[3] "{0} похожих сообщений пропущено"

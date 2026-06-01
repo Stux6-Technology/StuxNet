@@ -1,0 +1,105 @@
+plugins {
+    id 'java-library'
+    id 'scala'
+    id 'me.champeau.jmh' version '0.7.2'
+}
+
+archivesBaseName = 'i2p'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'java/src'
+            srcDir 'java/build/messages-src'
+            exclude 'gnu/getopt'
+            exclude 'gnu/gettext'
+        }
+        resources {
+            srcDir 'java/src'
+            include 'gnu/getopt/*.properties'
+        }
+    }
+    test {
+        java {
+            srcDir 'java/test/junit'
+            exclude 'net/i2p/AllCoreTests.java'
+            exclude 'net/i2p/data/DataTestSuite.java'
+            exclude 'net/i2p/data/i2cp/I2CPTestSuite.java'
+            exclude {
+                it.name.endsWith('IT.java')
+            }
+        }
+        resources {
+            srcDir 'java/test/resources'
+        }
+    }
+    jmh {
+        java {
+            srcDir 'java/bench'
+        }
+    }
+}
+
+dependencies {
+    api 'gnu.getopt:java-getopt:1.0.13'
+    api 'org.gnu.gettext:libintl:0.18.3'
+
+    if (project.hasProperty("with.jbigi")) {
+        runtimeOnly project(path: ':installer', configuration: 'jbigi')
+    }
+
+    // don't use 2.12.4, stack overflow: https://github.com/sbt/zinc/issues/1010
+    testImplementation "org.scala-lang:scala-library:2.12.5"
+    testImplementation 'org.scalatest:scalatest_2.12:3.0.4'
+}
+
+if (System.getenv("TARGET_JAVA_HOME") == null && JavaVersion.current() != JavaVersion.VERSION_1_7) {
+    sourceSets {
+        test {
+            scala {
+                srcDir 'java/test/scalatest'
+            }
+        }
+    }
+    task scalaTest(dependsOn: ['testClasses'], type: JavaExec) {
+        main = 'org.scalatest.tools.Runner'
+        args = ['-R', 'build/classes/scala/test', '-o']
+        classpath = sourceSets.test.runtimeClasspath
+    }
+
+    test.dependsOn scalaTest
+}
+
+// Create the java files from the po files. The jar task will compile them.
+// This requires gettext 0.19 or higher.
+// We don't support the "slow way"
+task bundle {
+    doLast {
+        if (!(new File("$buildDir/classes/java/main/net/i2p/util/messages_de.class")).exists())
+            println "core/java/bundle-messages.sh".execute().text
+    }
+}
+jar.dependsOn bundle
+
+jar {
+    manifest {
+        attributes 'Specification-Title': 'I2P Core API'
+        attributes 'Implementation-Title': 'I2P Java Core API'
+        attributes 'Main-Class': 'net.i2p.util.CommandLine'
+    }
+    from ('resources', {
+        into "net/i2p/util/resources"
+    })
+}
+
+configurations {
+    tests
+}
+task testJar(type: Jar) {
+    archiveBaseName = 'i2p-test'
+    dependsOn classes
+    from sourceSets.test.output
+}
+artifacts {
+    tests testJar
+}

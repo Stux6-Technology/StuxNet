@@ -1,0 +1,110 @@
+task prepUpdateRouter(type: Copy) {
+    dependsOn ':core:jar', ':router:jar'
+    // Pass in paths as a closure, so they are not executed during configuration
+    from {[
+        project(':core').jar.archivePath,
+        project(':router').jar.archivePath
+    ]}
+    into 'pkg-temp/lib'
+}
+
+task prepUpdateSmall(type: Copy) {
+    dependsOn prepUpdateRouter
+    dependsOn ':apps:ministreaming:jar', ':apps:streaming:jar'
+    dependsOn ':apps:routerconsole:jar', ':apps:i2ptunnel:i2ptunnelJar'
+    dependsOn ':apps:routerconsole:war', ':apps:i2ptunnel:war'
+    dependsOn ':apps:addressbook:jar'
+    // Base dir
+    into 'pkg-temp'
+    into('lib') {
+        from {[
+            project(':apps:ministreaming').jar.archivePath,
+            project(':apps:streaming').jar.archivePath,
+            project(':apps:routerconsole').jar.archivePath,
+            project(':apps:i2ptunnel').i2ptunnelJar.archivePath,
+            project(':apps:jrobin').jar.archivePath,
+        ]}
+    }
+    into('webapps') {
+        from {[
+            project(':apps:routerconsole').war.archivePath,
+            project(':apps:i2ptunnel').war.archivePath,
+        ]}
+    }
+}
+
+task prepUpdate(type: Copy) {
+    dependsOn prepUpdateSmall
+    dependsOn ':apps:BOB:jar', ':apps:sam:jar'
+    dependsOn ':apps:i2psnark:i2psnarkJar', ':apps:systray:jar'
+    dependsOn ':apps:jetty:jar'
+    dependsOn ':apps:desktopgui:jar'
+    dependsOn ':apps:susidns:war', ':apps:susimail:war'
+    dependsOn ':apps:i2psnark:war'
+    dependsOn ':apps:i2pcontrol:war'
+    dependsOn ':apps:imagegen:war'
+    // Base dir
+    into 'pkg-temp'
+    into('lib') {
+        from {[
+            project(':apps:BOB').jar.archivePath,
+            project(':apps:sam').jar.archivePath,
+            project(':apps:i2psnark').i2psnarkJar.archivePath,
+            project(':apps:systray').jar.archivePath,
+            project(':apps:desktopgui').jar.archivePath,
+            project(':apps:jetty').jar.archivePath,
+        ]}
+        // as of 0.7.12; someday, we can remove these from the updater
+        from 'apps/susidns/src/WEB-INF/lib/jstl.jar'
+        from 'apps/susidns/src/WEB-INF/lib/standard.jar'
+    }
+    into('webapps') {
+        from {[
+            project(':apps:susidns').war.archivePath,
+            project(':apps:susimail').war.archivePath,
+            project(':apps:i2psnark').war.archivePath,
+            project(':apps:i2pcontrol').war.archivePath,
+            project(':apps:imagegen').war.archivePath,
+        ]}
+    }
+    from('history.txt') {
+        filter(org.apache.tools.ant.filters.HeadFilter, lines:1500)
+    }
+    doLast {
+        String more = '\n\n----------------\n\nEARLIER HISTORY IS AVAILABLE IN THE SOURCE PACKAGE'
+        ant.concat(more, append: 'true', destfile: 'pkg-temp/history.txt')
+    }
+    from 'LICENSE.txt'
+    into('licenses') { from 'licenses' }
+    from 'installer/resources/blocklist.txt'
+    from 'installer/resources/deletelist.txt'
+    into('certificates') { from 'installer/resources/certificates' }
+    into('locale') { from 'installer/resources/locale' }
+    into('man') { from 'installer/resources/man' }
+}
+
+task updaterRouter(type: Zip) {
+    description 'makes an i2pupdate.zip file containing core and router jars only'
+    dependsOn prepUpdateRouter
+    // https://stackoverflow.com/questions/54501697/gradle-war-plugin-how-to-change-name-of-an-archive
+    // https://discuss.gradle.org/t/destinationdir-is-deprecated-archivename-is-deprecated/31586
+    archiveFileName.set('i2pupdate.zip')
+    destinationDirectory.set(file('.'))
+    from 'pkg-temp'
+}
+
+task updaterSmall(type: Zip) {
+    description 'makes an i2pupdate.zip file with a subset of the resources'
+    dependsOn prepUpdateSmall
+    archiveFileName.set('i2pupdate.zip')
+    destinationDirectory.set(file('.'))
+    from 'pkg-temp'
+}
+
+task updater(type: Zip) {
+    description 'makes an i2pupdate.zip file'
+    dependsOn prepUpdate
+    archiveFileName.set('i2pupdate.zip')
+    destinationDirectory.set(file('.'))
+    from 'pkg-temp'
+}
