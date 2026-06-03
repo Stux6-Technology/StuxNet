@@ -27,6 +27,15 @@
         "documentation": {}
     },
     {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
         "label": "\tport",
         "kind": 5,
         "importPath": "plus.test.i2p.i2p.apps.sam.Demos.datagramTests.samForward",
@@ -555,6 +564,69 @@
         "description": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
         "peekOfCode": "i = 0\nwhile 1 :\n    chunk = clientsocket.recv(1024)\n    i = i + 1\n    sys.stdout.write(str(i)+' '+chunk)\n    if not chunk: break\n    clientsocket.send(str(i)+' '+chunk)\nclientsocket.close()\nprint",
         "detail": "plus.test.i2p.i2p.apps.sam.Demos.streamTests.server",
+        "documentation": {}
+    },
+    {
+        "label": "apt_log",
+        "kind": 2,
+        "importPath": "plus.sunum",
+        "description": "plus.sunum",
+        "peekOfCode": "def apt_log(metin, gecikme=0.5):\n    \"\"\"Standart APT çıktıları için temiz bir log basar.\"\"\"\n    sys.stdout.write(metin)\n    sys.stdout.flush()\n    time.sleep(gecikme)\ndef apt_ilerleme_bar(paket_adi, yildiz_sayisi=20, bekleme=0.15):\n    \"\"\"APT paket yükleme ve açma esnasındaki ilerleme çubuğu simülasyonu.\"\"\"\n    for i in range(1, yildiz_sayisi + 1):\n        yuzde = int((i / yildiz_sayisi) * 100)\n        yildizlar = \"*\" * i",
+        "detail": "plus.sunum",
+        "documentation": {}
+    },
+    {
+        "label": "apt_ilerleme_bar",
+        "kind": 2,
+        "importPath": "plus.sunum",
+        "description": "plus.sunum",
+        "peekOfCode": "def apt_ilerleme_bar(paket_adi, yildiz_sayisi=20, bekleme=0.15):\n    \"\"\"APT paket yükleme ve açma esnasındaki ilerleme çubuğu simülasyonu.\"\"\"\n    for i in range(1, yildiz_sayisi + 1):\n        yuzde = int((i / yildiz_sayisi) * 100)\n        yildizlar = \"*\" * i\n        bosluklar = \" \" * (yildiz_sayisi - i)\n        # Unpacking standardı tam olarak uygulandı\n        sys.stdout.write(f\"\\r{YESIL}Unpacking: {paket_adi} ({yuzde}%) [{yildizlar}{bosluklar}]{RENKSIZ}\")\n        sys.stdout.flush()\n        time.sleep(bekleme)",
+        "detail": "plus.sunum",
+        "documentation": {}
+    },
+    {
+        "label": "YESIL",
+        "kind": 5,
+        "importPath": "plus.sunum",
+        "description": "plus.sunum",
+        "peekOfCode": "YESIL = '\\033[0;32m'\nBEYAZ = '\\033[0;37m'\nRENKSIZ = '\\033[0m'\nMAVI = '\\033[0;34m'\nSARI = '\\033[0;33m'\ndef apt_log(metin, gecikme=0.5):\n    \"\"\"Standart APT çıktıları için temiz bir log basar.\"\"\"\n    sys.stdout.write(metin)\n    sys.stdout.flush()\n    time.sleep(gecikme)",
+        "detail": "plus.sunum",
+        "documentation": {}
+    },
+    {
+        "label": "BEYAZ",
+        "kind": 5,
+        "importPath": "plus.sunum",
+        "description": "plus.sunum",
+        "peekOfCode": "BEYAZ = '\\033[0;37m'\nRENKSIZ = '\\033[0m'\nMAVI = '\\033[0;34m'\nSARI = '\\033[0;33m'\ndef apt_log(metin, gecikme=0.5):\n    \"\"\"Standart APT çıktıları için temiz bir log basar.\"\"\"\n    sys.stdout.write(metin)\n    sys.stdout.flush()\n    time.sleep(gecikme)\ndef apt_ilerleme_bar(paket_adi, yildiz_sayisi=20, bekleme=0.15):",
+        "detail": "plus.sunum",
+        "documentation": {}
+    },
+    {
+        "label": "RENKSIZ",
+        "kind": 5,
+        "importPath": "plus.sunum",
+        "description": "plus.sunum",
+        "peekOfCode": "RENKSIZ = '\\033[0m'\nMAVI = '\\033[0;34m'\nSARI = '\\033[0;33m'\ndef apt_log(metin, gecikme=0.5):\n    \"\"\"Standart APT çıktıları için temiz bir log basar.\"\"\"\n    sys.stdout.write(metin)\n    sys.stdout.flush()\n    time.sleep(gecikme)\ndef apt_ilerleme_bar(paket_adi, yildiz_sayisi=20, bekleme=0.15):\n    \"\"\"APT paket yükleme ve açma esnasındaki ilerleme çubuğu simülasyonu.\"\"\"",
+        "detail": "plus.sunum",
+        "documentation": {}
+    },
+    {
+        "label": "MAVI",
+        "kind": 5,
+        "importPath": "plus.sunum",
+        "description": "plus.sunum",
+        "peekOfCode": "MAVI = '\\033[0;34m'\nSARI = '\\033[0;33m'\ndef apt_log(metin, gecikme=0.5):\n    \"\"\"Standart APT çıktıları için temiz bir log basar.\"\"\"\n    sys.stdout.write(metin)\n    sys.stdout.flush()\n    time.sleep(gecikme)\ndef apt_ilerleme_bar(paket_adi, yildiz_sayisi=20, bekleme=0.15):\n    \"\"\"APT paket yükleme ve açma esnasındaki ilerleme çubuğu simülasyonu.\"\"\"\n    for i in range(1, yildiz_sayisi + 1):",
+        "detail": "plus.sunum",
+        "documentation": {}
+    },
+    {
+        "label": "SARI",
+        "kind": 5,
+        "importPath": "plus.sunum",
+        "description": "plus.sunum",
+        "peekOfCode": "SARI = '\\033[0;33m'\ndef apt_log(metin, gecikme=0.5):\n    \"\"\"Standart APT çıktıları için temiz bir log basar.\"\"\"\n    sys.stdout.write(metin)\n    sys.stdout.flush()\n    time.sleep(gecikme)\ndef apt_ilerleme_bar(paket_adi, yildiz_sayisi=20, bekleme=0.15):\n    \"\"\"APT paket yükleme ve açma esnasındaki ilerleme çubuğu simülasyonu.\"\"\"\n    for i in range(1, yildiz_sayisi + 1):\n        yuzde = int((i / yildiz_sayisi) * 100)",
+        "detail": "plus.sunum",
         "documentation": {}
     }
 ]
