@@ -1,12 +1,7 @@
-
 #include <UUN29.h>
 #include <malbolge.h>
 #include <migrate.h>
 #include <linux>
-
-#ifndef _MALBOLGE
-#ifndef _i2p_migarate
-#ifndef _Super_User
 
 #define _Super_User
 #define _i2p_migarate
