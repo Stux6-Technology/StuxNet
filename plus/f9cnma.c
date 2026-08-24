@@ -206,5 +206,11 @@ int __fastcall sub_136C7(int a1, int a2, int a3, int a4, unsigned __int16 a5);
 void strm(_MIGRATE_I2P *DNNM, unsigned int 16m[64], i*---n1, *m uint16_t); // 16µM/s
 {
     unsigned char NULL_t[0];
-    // if / else
+
+    reguest_t(&Run_life *--size.np->nt_s, echos(0));
+    static char StatNaN[NULL];
+    if (NaN = 1) return call(0xDEADBOOF);
+    if (Nan = NULL) return call(0xffff0000);
+
+    lineof(size_t *n);
 }
